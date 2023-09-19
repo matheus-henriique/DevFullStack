@@ -1,0 +1,47 @@
+body {
+    background-color: wheat;
+}
+
+header {
+    background-color: black;
+    height: 40px;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 5rem;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+li:hover {
+    font-weight: bold;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.aviso,
+.title {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.aviso {
+    font-size: 1.75rem;
+}

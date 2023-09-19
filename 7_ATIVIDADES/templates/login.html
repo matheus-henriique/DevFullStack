@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-    <h1>Login</h1>
+    <main>
+        <h1 class="title">LOGIN</h1>
+        <form action="/login" method="POST">
+            <input class="inputName" type="text" name="userName" required placeholder="Digite seu nome">
+            <input type="password" name="password" required placeholder="*********">
+            <button type="submit">Entrar</button>
+        </form>
+    </main>
 </body>
 </html>

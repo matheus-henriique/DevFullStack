@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const bodyParser = require('body-parser');
 const app = express();
 
 const basePath = path.join(__dirname, "templates");
@@ -9,6 +10,9 @@ const user = {
     name: "Matheus",
     password: "12345"
 };
+
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // Renderiza tela de login
 app.get("/", (req, res) => {
@@ -21,19 +25,23 @@ app.get("/login", (req, res) => {
 });
 
 // Renderiza tela home
-app.get("/home", (req, res) => {
+app.get("/home/:name", (req, res) => {
+    const userLogged = req.params.name;
     res.sendFile(`${basePath}/home.html`);
+
+    console.log(`Usuário admin ${userLogged} logado.`);
 });
 
 // Valida os dados de login
 app.post("/login", (req, res) => {
     const {userName, password} = req.body;
 
-    if(userName == user.name && password == user.passwordd) {
-        return res.sendFile(`${basePath}/home.html`); 
+    if(userName == user.name && password == user.password) {
+        res.redirect(`/home/${userName}`); 
+        return;
     }
 
-    res.sendFile(`${basePath}/login.html`);
+    res.redirect('/login'); 
 });
 
 app.listen(5000, ()=>{
