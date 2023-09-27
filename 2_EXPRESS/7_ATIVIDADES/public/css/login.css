@@ -1,0 +1,45 @@
+body {
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    background-color: wheat;
+}
+
+.title {
+    margin-bottom: 2rem;
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 300px;
+    padding: 1rem;
+    font-size: 1.225rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 255, 179, 0.658);
+    color: black;
+}
