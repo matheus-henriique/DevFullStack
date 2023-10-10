@@ -16,8 +16,14 @@ app.get('/', (req, res) => {
         profissao: "Programador",
         idade: 19
     }
+
+    const auth = true;
     
-    res.render('home', {usuario});
+    res.render('home', {usuario, auth});
+});
+
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard')
 });
 
 app.listen(PORT, ()=>{
